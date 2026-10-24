@@ -1,5 +1,7 @@
 # Ustasi - Ustalar va Mijozlar Platformasi
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sodiqovislom/Ustasi)
+
 Ustasi — turli sohadagi malakali ustalarni topish, ularning xizmatlaridan foydalanish va to'g'ridan-to'g'ri bog'lanish uchun mo'ljallangan zamonaviy platforma.
 
 ## 🚀 Texnologiyalar
