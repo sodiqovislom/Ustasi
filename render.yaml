@@ -33,8 +33,6 @@ services:
   - type: web
     name: ustasi-frontend
     runtime: static
-    region: frankfurt
-    plan: free
     rootDir: frontend
     buildCommand: "npm install && VITE_API_URL=${BACKEND_URL} npm run build"
     staticPublishPath: "dist"
