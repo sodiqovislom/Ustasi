@@ -44,6 +44,24 @@ def seed():
         cats[cat.slug] = cat
         print(f"Kategoriya: {cat.name}")
 
+    # 1.5. Superuser (Admin)
+    admin_user, _ = User.objects.update_or_create(
+        phone="+998900000000",
+        defaults={
+            "first_name": "Admin",
+            "last_name": "Ustasi",
+            "email": "admin@ustasi.uz",
+            "role": "admin",
+            "is_staff": True,
+            "is_superuser": True
+        }
+    )
+    admin_user.set_password("admin123")
+    admin_user.is_staff = True
+    admin_user.is_superuser = True
+    admin_user.save()
+    print("Admin yaratildi: admin@ustasi.uz / admin123")
+
     # 2. Test Client Users
     client1, _ = User.objects.update_or_create(
         phone="+998901111111",

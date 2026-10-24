@@ -2,6 +2,11 @@ from django.contrib import admin
 from .models import User
 
 
+admin.site.site_header = "Ustasi Boshqaruv Paneli"
+admin.site.site_title = "Ustasi Admin"
+admin.site.index_title = "Platformani boshqarish"
+
+
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'phone', 'email', 'role', 'is_active', 'created_at')

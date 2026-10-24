@@ -48,6 +48,22 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def get_by_natural_key(self, username):
+        login_str = str(username).strip()
+        if login_str.isdigit():
+            user = self.filter(id=int(login_str)).first()
+            if user:
+                return user
+        norm_phone = normalize_phone_number(login_str)
+        filters = Q(email__iexact=login_str.lower())
+        if norm_phone:
+            filters |= Q(phone=norm_phone)
+        filters |= Q(phone=login_str)
+        user = self.filter(filters).first()
+        if user:
+            return user
+        raise self.model.DoesNotExist(f"Foydalanuvchi topilmadi: {username}")
+
     def create_superuser(self, phone=None, email=None, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
