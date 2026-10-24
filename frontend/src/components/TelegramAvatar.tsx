@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PhotoViewerModal } from './PhotoViewerModal';
+import { resolveMediaUrl } from '../api/client';
 
 // Telegram Signature Color Gradients for initials
 const TELEGRAM_GRADIENTS = [
@@ -95,7 +96,8 @@ export const TelegramAvatar: React.FC<TelegramAvatarProps> = ({
   const currentSize = sizeMap[size];
   const gradient = getTelegramGradient(name);
   const initials = getInitials(name);
-  const hasImage = Boolean(src && !imageError);
+  const resolvedSrc = resolveMediaUrl(src);
+  const hasImage = Boolean(resolvedSrc && !imageError);
 
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
@@ -132,7 +134,7 @@ export const TelegramAvatar: React.FC<TelegramAvatarProps> = ({
         >
           {hasImage ? (
             <img
-              src={src!}
+              src={resolvedSrc!}
               alt={name}
               onError={() => setImageError(true)}
               className="w-full h-full object-cover rounded-full"
@@ -176,7 +178,7 @@ export const TelegramAvatar: React.FC<TelegramAvatarProps> = ({
         <PhotoViewerModal
           isOpen={isViewerOpen}
           onClose={() => setIsViewerOpen(false)}
-          imageUrl={src!}
+          imageUrl={resolvedSrc!}
           title={name}
           subtitle={subtitle}
           isAvatar={true}

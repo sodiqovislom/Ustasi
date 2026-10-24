@@ -3,7 +3,16 @@ import {
   LocationRegion, ConversationItem, MessageItem
 } from '../types';
 
-const API_BASE = '/api/v1';
+const rawBaseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+const API_BASE = rawBaseUrl ? `${rawBaseUrl}/api/v1` : '/api/v1';
+
+export function resolveMediaUrl(url?: string | null): string | undefined {
+  if (!url) return undefined;
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+    return url;
+  }
+  return rawBaseUrl ? `${rawBaseUrl}${url.startsWith('/') ? '' : '/'}${url}` : url;
+}
 
 class ApiClient {
   private getAccessToken(): string | null {

@@ -1,0 +1,1 @@
+web: gunicorn ustasi_core.wsgi:application

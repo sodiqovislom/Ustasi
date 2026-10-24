@@ -5,7 +5,7 @@ import {
   CheckCircle2, AlertCircle, Save, Plus, Trash2, Eye, ShieldCheck, Loader2,
   Camera, Upload, Image as ImageIcon, Briefcase
 } from 'lucide-react';
-import { api } from '../api/client';
+import { api, resolveMediaUrl } from '../api/client';
 import { Master, ServiceItem, LocationRegion, PortfolioItem } from '../types';
 import { useAuth } from '../context/AuthContext';
 import { TelegramAvatar } from '../components/TelegramAvatar';
@@ -742,7 +742,7 @@ export const MasterDashboardPage: React.FC = () => {
                       {item.image_url ? (
                         <div className="h-44 w-full bg-slate-100 overflow-hidden relative">
                           <img
-                            src={item.image_url}
+                            src={resolveMediaUrl(item.image_url)}
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                           />

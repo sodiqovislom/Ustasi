@@ -5,7 +5,7 @@ import {
   Clock, Award, Wrench, ChevronLeft, Calendar, User, CheckCircle2,
   ExternalLink, Smartphone, Zap, Hammer, Briefcase, Camera, Eye
 } from 'lucide-react';
-import { api } from '../api/client';
+import { api, resolveMediaUrl } from '../api/client';
 import { Master, RatingItem } from '../types';
 import { useAuth } from '../context/AuthContext';
 import { CallModal } from '../components/CallModal';
@@ -393,7 +393,7 @@ export const MasterDetailPage: React.FC = () => {
                     onClick={() => {
                       if (item.image_url) {
                         setSelectedPortfolioItem({
-                          url: item.image_url,
+                          url: resolveMediaUrl(item.image_url) || item.image_url,
                           title: item.title,
                           desc: item.description,
                         });
@@ -407,7 +407,7 @@ export const MasterDetailPage: React.FC = () => {
                       {item.image_url ? (
                         <div className="w-full h-44 rounded-2xl overflow-hidden bg-slate-200 mb-2.5 relative shadow-xs">
                           <img
-                            src={item.image_url}
+                            src={resolveMediaUrl(item.image_url)}
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
