@@ -1,0 +1,86 @@
+{
+  "ord_1792859201_586819231": {
+    "client_chat_id": 586819231,
+    "cat_name": "Santexnik",
+    "district": "Yunusobod tumani",
+    "desc": "🎤 Ovozli xabar (2 soniya)",
+    "phone": "Ovozda aytilgan (Telegram: ID: 586819231)",
+    "voice_file_id": "AwACAgIAAxkBAAIBOWrc3EHdJ3E3uTQpe_rxfX34EIp2AALesQAC_DbpSnjbZ9H9qiNRPQQ",
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-24 21:26:41"
+  },
+  "ord_1792860046_586819231": {
+    "client_chat_id": 586819231,
+    "cat_name": "Elektrik",
+    "district": "Shayxontohur",
+    "desc": "zuldik bn santexnik kk",
+    "phone": "+998999749860",
+    "voice_file_id": null,
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-24 21:40:46"
+  },
+  "ord_1792861052_5960858213": {
+    "client_chat_id": 5960858213,
+    "cat_name": "Telefon ustasi",
+    "district": "Sergeli",
+    "desc": "Salom",
+    "phone": "+998770503514",
+    "voice_file_id": null,
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-24 21:57:32"
+  },
+  "ord_1792863070_586819231": {
+    "client_chat_id": 586819231,
+    "cat_name": "Santexnik",
+    "district": "Chilonzor tuman",
+    "desc": "🎤 Ovozli xabar (5 soniya)",
+    "phone": "+998999749860",
+    "voice_file_id": "AwACAgIAAxkBAAIBzWrc60pc3LocCBOU1XWlOXLogh4GAAKOsgAC_DbpSgHce62WLfJtPQQ",
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-24 22:31:10"
+  },
+  "ord_1792872525_586819231": {
+    "client_chat_id": 586819231,
+    "cat_name": "Santexnik",
+    "district": "Sergeli tumani",
+    "desc": "🎤 Ovozli: \"sergelida truba yorilgan beshinchi massivi\"",
+    "phone": "+998999749860",
+    "voice_file_id": "AwACAgIAAxkBAAIB-mrdED2qrgg3eadEirBHec3SwrE5AAIbtAAC_DbpShHaOtBjD399PQQ",
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-25 01:08:45"
+  },
+  "ord_1792873295_586819231": {
+    "client_chat_id": 586819231,
+    "cat_name": "Quruvchi",
+    "district": "Toshkent shahri",
+    "desc": "🎤 Ovozli: \"sevgilida uydir remont qilish kerak\"",
+    "phone": "+998999749860",
+    "voice_file_id": "AwACAgIAAxkBAAICCGrdEzNPPZDVg_vMD8ty0kCJFLIWAAIztAAC_DbpSq1wxc7LW-RGPQQ",
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-25 01:21:35"
+  },
+  "ord_1792874490_8506028324": {
+    "client_chat_id": 8506028324,
+    "cat_name": "Elektrik",
+    "district": "Chilonzor tumani",
+    "desc": "Kamera ustasi",
+    "phone": "Telegram: @No_Cage",
+    "voice_file_id": null,
+    "is_audio": false,
+    "accepted_by": null,
+    "sent_notifications": [],
+    "created_at": "2026-10-25 01:41:30"
+  }
+}

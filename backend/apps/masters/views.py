@@ -401,3 +401,39 @@ class PortfolioDeleteView(views.APIView):
         work = get_object_or_404(PortfolioWork, id=pk, master=request.user.master_profile)
         work.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def webapp_map_view(request):
+    import json
+    from django.shortcuts import render
+    masters = Master.objects.filter(status__in=['active', 'busy']).select_related('user', 'category')
+    data = []
+    for m in masters:
+        lat = m.latitude or 41.2995
+        lon = m.longitude or 69.2401
+        avatar = None
+        if m.user.avatar:
+            try:
+                avatar = request.build_absolute_uri(m.user.avatar.url)
+            except Exception:
+                pass
+
+        data.append({
+            'id': m.id,
+            'full_name': m.full_name,
+            'category': m.category.name,
+            'region': m.region,
+            'district': m.district,
+            'latitude': float(lat),
+            'longitude': float(lon),
+            'price': m.price,
+            'average_rating': float(m.average_rating),
+            'ratings_count': m.ratings_count,
+            'phone': m.phone,
+            'avatar_url': avatar,
+            'status': m.status
+        })
+
+    return render(request, 'webapp_map.html', {
+        'masters_json': json.dumps(data, ensure_ascii=False)
+    })
